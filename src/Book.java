@@ -10,7 +10,7 @@ public class Book {
         Author authorSecondClass = new Author("Александр Пушкин","AlehandroPushka@gmail.com", 'm');
         name = getName();
         author = authorSecondClass.getName();
-        setPrice((double)random.nextInt(100));
+        setPrice(random.nextInt(100));
         setQty(random.nextInt(10));
         System.out.println("\"" + getName() + "\" от " + authorSecondClass.ToString() + "  \n\\\\Дополнительно сделал:"
                 + "\nСтоимостью: " + getPrice() + " $\nВ количестве: " + getQty() + " штук.");
