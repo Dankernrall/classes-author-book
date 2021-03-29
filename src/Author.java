@@ -1,15 +1,7 @@
 public class Author {
-    private String name,email;
-    private char gender;
-
-
-
-    String ToString() {
-        name = getName();
-        email = getEmail();
-        gender = getGender();
-        return (name +" (" + gender + ") " + email);
-    }
+    private String email;
+    private final String name;
+    private final char gender;
 
     public Author(String name, String email, char gender) {
         this.name = name;
@@ -31,5 +23,10 @@ public class Author {
 
     public char getGender() {
         return gender;
+    }
+
+    @Override
+    public String toString() {
+        return name + " (" + gender + ") " + email;
     }
 }

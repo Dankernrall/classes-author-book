@@ -1,20 +1,16 @@
-import java.util.Random;
-
 public class Book {
-    private String name = "Legendary Book",author;
+    private final String name;
+    private final Author author;
     private double price;
     private int qty;
-    final Random random = new Random();
 
-    void ToString(){
-        Author authorSecondClass = new Author("Александр Пушкин","AlehandroPushka@gmail.com", 'm');
-        name = getName();
-        author = authorSecondClass.getName();
-        setPrice((double)random.nextInt(100));
-        setQty(random.nextInt(10));
-        System.out.println("\"" + getName() + "\" от " + authorSecondClass.ToString() + "  \n\\\\Дополнительно сделал:"
-                + "\nСтоимостью: " + getPrice() + " $\nВ количестве: " + getQty() + " штук.");
+    public Book(String name, Author author, int price, int qty) {
+        this.name = name;
+        this.author = author;
+        this.price = price;
+        this.qty = qty;
     }
+
     public void setPrice(double price) {
         this.price = price;
     }
@@ -27,7 +23,7 @@ public class Book {
         return name;
     }
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return author;
     }
 
@@ -40,7 +36,10 @@ public class Book {
     }
 
 
-
-
+    @Override
+    public String toString() {
+        return "\"" + getName() + "\"" +
+                " от " + author.toString();
+    }
 }
 
