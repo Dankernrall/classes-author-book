@@ -38,7 +38,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "\"" + getName() + "\"" +
+        return "\'" + getName() + "\'" +
                 " от " + author.toString();
     }
 }
